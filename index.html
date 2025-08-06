@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LeakyTip - Home</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<style>
+		body {
+			font-family: 'Inter', sans-serif;
+		}
+
+		::-webkit-scrollbar {
+			width: 8px;
+		}
+
+		::-webkit-scrollbar-track {
+			background: #1a1a2e;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background: #4a4a6a;
+			border-radius: 4px;
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+			background: #6a6a8a;
+		}
+
+		.glassmorphic {
+			background: rgba(26, 26, 46, 0.5);
+			/* Darker glass effect */
+			backdrop-filter: blur(12px);
+			-webkit-backdrop-filter: blur(12px);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		.category-tag {
+			@apply px-4 py-2 rounded-lg text-sm font-semibold bg-white/5 hover: bg-white/20 cursor-pointer whitespace-nowrap transition-colors;
+		}
+
+		.category-tag.active {
+			@apply bg-purple-600 text-white hover: bg-purple-700;
+		}
+	</style>
+</head>
+
+<body class="bg-[#0f0f0f] text-white antialiased">
+
+	<div id="app" class="flex h-screen overflow-hidden">
+		<aside id="sidebar"
+			class="w-64 bg-[#0f0f0f] border-r border-gray-800/50 flex-shrink-0 transition-all duration-300 ease-in-out fixed lg:relative lg:translate-x-0 h-full z-30 -translate-x-full">
+			<div class="px-4 py-4">
+				<a href="index.html" class="flex items-center space-x-3 mb-6 px-2">
+					<svg class="w-8 h-8 text-purple-500" viewBox="0 0 24 24" fill="currentColor">
+						<path
+							d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c2.76 0 5.26-1.12 7.07-2.93S22 14.76 22 12c0-2.05-0.62-3.95-1.68-5.55C18.66 4.34 15.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-12h2v6h-2zm0 8h2v2h-2z" />
+						<path d="M12 17.5c-0.83 0-1.5-0.67-1.5-1.5s0.67-1.5 1.5-1.5 1.5 0.67 1.5 1.5-0.67 1.5-1.5 1.5z"
+							opacity="0.6" />
+					</svg>
+					<span class="text-2xl font-bold tracking-wider">LeakyTip</span>
+				</a>
+			</div>
+			<nav class="flex-grow overflow-y-auto px-4 pb-4" style="height: calc(100% - 72px);">
+				<ul class="space-y-2">
+					<li><a href="#" class="flex items-center py-2.5 px-4 rounded-lg bg-gray-800/50">
+							<svg class="w-6 h-6 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+								stroke-width="1.5" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round"
+									d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h7.5" />
+								</svg>
+							<span class="font-medium">Home</span>
+						</a></li>
+					<li><a href="#"
+							class="flex items-center py-2.5 px-4 rounded-lg hover:bg-gray-800/50 transition-colors">
+							<svg class="w-6 h-6 mr-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+								viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round"
+									d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9A2.25 2.25 0 0 0 13.5 5.25h-9A2.25 2.25 0 0 0 2.25 7.5v9A2.25 2.25 0 0 0 4.5 18.75Z" />
+								</svg>
+							<span class="font-medium">Videos</span>
+						</a></li>
+					<li><a href="#"
+							class="flex items-center py-2.5 px-4 rounded-lg hover:bg-gray-800/50 transition-colors">
+							<svg class="w-6 h-6 mr-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+								viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round"
+									d="M2.25 15.75l5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+								</svg>
+							<span class="font-medium">Image Catalogs</span>
+						</a></li>
+				</ul>
+				<hr class="my-4 border-gray-800/50">
+				<h3 class="px-4 text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Creators</h3>
+				<ul class="space-y-2">
+					<li><a href="#"
+							class="flex items-center py-2 px-4 rounded-lg hover:bg-gray-800/50 transition-colors">
+							<img src="https://placehold.co/40x40/7c3aed/ffffff?text=U" class="w-6 h-6 rounded-full mr-3" alt="Avatar">
+							<span class="font-medium text-sm">Utahjaz</span>
+						</a></li>
+					<li><a href="#"
+							class="flex items-center py-2 px-4 rounded-lg hover:bg-gray-800/50 transition-colors">
+							<img src="https://placehold.co/40x40/db2777/ffffff?text=C" class="w-6 h-6 rounded-full mr-3" alt="Avatar">
+							<span class="font-medium text-sm">Chula365</span>
+						</a></li>
+					<li><a href="#"
+							class="flex items-center py-2 px-4 rounded-lg hover:bg-gray-800/50 transition-colors">
+							<img src="https://placehold.co/40x40/10b981/ffffff?text=B" class="w-6 h-6 rounded-full mr-3" alt="Avatar">
+							<span class="font-medium text-sm">Belle Delphine</span>
+						</a></li>
+					<li><a href="#"
+							class="flex items-center py-2 px-4 rounded-lg hover:bg-gray-800/50 transition-colors">
+							<img src="https://placehold.co/40x40/f59e0b/ffffff?text=H" class="w-6 h-6 rounded-full mr-3" alt="Avatar">
+							<span class="font-medium text-sm">Hannahowo</span>
+						</a></li>
+				</ul>
+			</nav>
+		</aside>
+
+		<div class="flex-1 flex flex-col overflow-hidden">
+			<header class="sticky top-0 w-full glassmorphic h-16 flex items-center justify-between px-4 md:px-6 z-20">
+				<div class="flex items-center">
+					<button id="menu-btn" class="p-2 rounded-full hover:bg-white/10 lg:hidden">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+				</div>
+				<div class="flex-1 flex justify-center px-4">
+					<div class="w-full max-w-2xl">
+						<div class="relative">
+							<input type="text" placeholder="Search videos, catalogs, creators..." class="w-full bg-black/30 border border-gray-700 rounded-full py-2.5 pl-5 pr-12 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all">
+							<div class="absolute inset-y-0 right-0 flex items-center">
+								<button class="h-full px-4 bg-gray-800/80 rounded-r-full hover:bg-gray-700/80">
+                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                                </button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex items-center space-x-2 md:space-x-4">
+					<button class="p-2 rounded-full hover:bg-white/10">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                    </button>
+					<img src="https://placehold.co/40x40/8b5cf6/ffffff?text=G" alt="User Avatar" class="w-8 h-8 md:w-10 md:h-10 rounded-full cursor-pointer">
+                </div>
+			</header>
+
+			<main class="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8">
+				<div class="mb-6">
+					<div class="flex space-x-3 overflow-x-auto pb-2 -mx-4 px-4">
+						<span class="category-tag active">All</span>
+						<span class="category-tag">Exclusive</span>
+						<span class="category-tag">Amateur</span>
+						<span class="category-tag">Cosplay</span>
+						<span class="category-tag">POV</span>
+						<span class="category-tag">Hardcore</span>
+						<span class="category-tag">Recently Added</span>
+					</div>
+				</div>
+
+				<div
+					class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-x-4 gap-y-8">
+
+					<a href="/utahjaz_video1.html" class="flex flex-col space-y-3 cursor-pointer group">
+						<div class="relative rounded-xl overflow-hidden">
+							<img src="https://placehold.co/600x400/7c3aed/ffffff?text=Utahjaz" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-300" alt="Thumbnail">
+							<span class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">22:14</span>
+							<div
+								class="absolute top-2 right-2 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded">
+								VIDEO</div>
+						</div>
+						<div class="flex items-start space-x-3">
+							<img src="https://placehold.co/40x40/7c3aed/ffffff?text=U" class="w-9 h-9 rounded-full" alt="Channel Avatar">
+							<div>
+								<h3 class="text-base font-medium text-gray-100 leading-tight group-hover:text-white">
+									Latest Exclusive Video Leak</h3>
+								<p class="text-sm text-gray-400 mt-1">Utahjaz</p>
+								<p class="text-sm text-gray-400">1.2M Views &bull; 2 days ago</p>
+							</div>
+						</div>
+					</a>
+
+					<a href="/chula365_image1.html" class="flex flex-col space-y-3 cursor-pointer group">
+						<div class="relative rounded-xl overflow-hidden">
+							<img src="https://placehold.co/600x400/db2777/ffffff?text=Chula365" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-300" alt="Thumbnail">
+							<div
+								class="absolute top-2 right-2 bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded">
+								IMAGES</div>
+							<div
+								class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded flex items-center space-x-1.5">
+								<svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" fill="none"
+									viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round"
+										d="M2.25 15.75l5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Z" />
+									</svg>
+								<span>128 Images</span>
+							</div>
+						</div>
+						<div class="flex items-start space-x-3">
+							<img src="https://placehold.co/40x40/db2777/ffffff?text=C" class="w-9 h-9 rounded-full" alt="Channel Avatar">
+							<div>
+								<h3 class="text-base font-medium text-gray-100 leading-tight group-hover:text-white">
+									Full Photoshoot Catalog</h3>
+								<p class="text-sm text-gray-400 mt-1">Chula365</p>
+								<p class="text-sm text-gray-400">98k Views &bull; 1 week ago</p>
+							</div>
+						</div>
+					</a>
+
+					<a href="/belledelphine_video1.html" class="flex flex-col space-y-3 cursor-pointer group">
+						<div class="relative rounded-xl overflow-hidden">
+							<img src="https://placehold.co/600x400/10b981/ffffff?text=Belle+Delphine" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-300" alt="Thumbnail">
+							<span class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">15:30</span>
+							<div
+								class="absolute top-2 right-2 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded">
+								VIDEO</div>
+						</div>
+						<div class="flex items-start space-x-3">
+							<img src="https://placehold.co/40x40/10b981/ffffff?text=B" class="w-9 h-9 rounded-full" alt="Avatar">
+							<div>
+								<h3 class="text-base font-medium text-gray-100 leading-tight group-hover:text-white">
+									Gamer Girl Bath Water Returns</h3>
+								<p class="text-sm text-gray-400 mt-1">Belle Delphine</p>
+								<p class="text-sm text-gray-400">5.3M Views &bull; 3 weeks ago</p>
+							</div>
+						</div>
+					</a>
+
+					<a href="/hannahowo_image1.html" class="flex flex-col space-y-3 cursor-pointer group">
+						<div class="relative rounded-xl overflow-hidden">
+							<img src="https://placehold.co/600x400/f59e0b/ffffff?text=Hannahowo" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-300" alt="Thumbnail">
+							<div
+								class="absolute top-2 right-2 bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded">
+								IMAGES</div>
+							<div
+								class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded flex items-center space-x-1.5">
+								<svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" fill="none"
+									viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round"
+										d="M2.25 15.75l5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Z" />
+									</svg>
+								<span>96 Images</span>
+							</div>
+						</div>
+						<div class="flex items-start space-x-3">
+							<img src="https://placehold.co/40x40/f59e0b/ffffff?text=H" class="w-9 h-9 rounded-full" alt="Channel Avatar">
+							<div>
+								<h3 class="text-base font-medium text-gray-100 leading-tight group-hover:text-white">
+									Cosplay Image Set</h3>
+								<p class="text-sm text-gray-400 mt-1">Hannahowo</p>
+								<p class="text-sm text-gray-400">450k Views &bull; 1 month ago</p>
+							</div>
+						</div>
+					</a>
+				</div>
+			</main>
+		</div>
+	</div>
+
+	<script>
+		const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            sidebar.classList.toggle('-translate-x-full');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (window.innerWidth < 1024) {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnMenuBtn = menuBtn.contains(event.target);
+                if (!isClickInsideSidebar && !isClickOnMenuBtn && !sidebar.classList.contains('-translate-x-full')) {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            }
+        });
+	</script>
+</body>
+
+</html>
